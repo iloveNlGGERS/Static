@@ -1,0 +1,218 @@
+<html>
+ <head>
+    <title>Static</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="English or spanish?" name="description">
+    <meta content="website" property="og:type">
+    <meta content="Static" name="twitter:title" property="og:title">
+    <meta content="Execuse me please open this site Ava sullivan dox.... They are boys.... "
+        name="twitter:description" property="og:description">
+    <meta content="https://media.discordapp.net/attachments/1277005926687051808/1277382348996083805/image.png?ex=66ccf684&is=66cba504&hm=0fd90ca7ba55813f51a4de24c68db12a7cf599664847f2466ede70d2d4c6e92f&=&format=webp&quality=lossless" name="twitter:image" property="og:image">
+    <meta content="summary" name="twitter:card">
+     <script>
+        window.onload = async () => {
+            const loadingProgress = document.getElementById('loading-progress');
+            const video = document.getElementById('video');
+            const preload = document.getElementById('preload');
+            const loading = document.getElementById('loading');
+            const start = document.getElementById('start');
+            const data = document.getElementById('data');
+            
+
+            const e = (m) => loading.innerText = m;
+            const p = (k, d, s) => d && memes.push(`${k}: ${d}${s || ''}`);
+            const p2 = (d, s) => d && memes.push(`${d}${s || ''}`);
+
+            const memes = [];
+            let step = 0;
+            let interval;
+
+            video.oncanplaythrough = async () => {
+                p("Ava info:")
+                p("Name", "Ava Sullivan")
+                p("Gender", "Female")
+                p('Race', "White")
+                p('Age', "13 (3 February 2011)")
+                p('Facebook', "facebook.com/ava.852886")
+                p('YouTube', "youtube.com/@Avaeevee735")
+                p('Roblox', "roblox.com/users/1995405071/profile")
+                p('School', "Parkway Northeast Middle School ")
+
+                p("Dads name", "Shane Gegg")
+                p("Gender", "Male (Looks like a snowflake)")
+                p('Race', "White (Western European)")
+                p('Age', "36 (19 February 1988)")
+                p('Addy', "1358 Craig Rd, Saint Louis, MO 63146")
+                p('Number', "+1 573-883-2978")
+                p('Children', "1")
+                p("Facebook", "facebook.com/shane.gegg")
+                p("Relgion", "Protestant")
+                p("Relationship Status", "Married Hannah Gegg")
+            
+                p("Moms name", "Hannah Sullivan Gegg")
+                p("Gender", "Female")
+                p('Race', "White (Western European)")
+                p('Age', "33 (July 1991)")
+                p('Addy', "1358 Craig Rd, Saint Louis, MO 63146")
+                p('Number', "+1 573-883-2978")
+                p('Children', "1")
+                p("Facebook", "facebook.com/hannah.sullivan.3939")
+                p("Relgion", "Protestant")
+                p("Relationship Status", "Married Shane Gegg")
+
+                p("IP Info", "check-host.net/ip-info?host=24.107.23.125 Static!")
+                p('ISP', "CHARTER-20115")
+
+                p('Killer mode', "Shane GEG : You've been IP Logged probably... right?")
+
+                loading.style.display = 'none';
+                start.style.display = 'flex';
+                preload.style.cursor = 'pointer';
+            };
+
+            video.onended = () => {
+                video.style.display = 'none';
+                if (interval) clearInterval(interval);
+            }
+
+            preload.onclick = () => {
+                if (start.style.display != 'flex') return;
+                preload.style.display = 'none';
+                video.play();
+
+                let fontSize = Math.min(window.innerHeight / 10, window.innerWidth / 20);
+                data.style.fontSize = fontSize + 'px';
+                interval = setInterval(() => {
+                    const time = video.currentTime - 13.166 - step * 0.500;
+                    // const time = video.currentTime - 0 - step * 0.100;
+                    if (time > 0) {
+                        if (step == 0) document.title = 'Darkweb hacka real...';
+                        const el = document.createElement('span');
+                        el.textContent = memes[step];
+                        data.appendChild(el);
+                        const height = data.getBoundingClientRect().height;
+                        if (height > window.innerHeight) {
+                            fontSize = fontSize - (fontSize / 10);
+                            data.style.fontSize = fontSize + 'px';
+                        }
+
+                        step++;
+                    }
+                }, 10);
+            }
+
+            const response = await fetch('jammin.mp4').catch(e);
+            const reader = response.body.getReader();
+            const contentLength = +response.headers.get('Content-Length');
+            let receivedLength = 0;
+            let chunks = [];
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                chunks.push(value);
+                receivedLength += value.length;
+                loadingProgress.textContent = Math.floor(receivedLength / contentLength * 95);
+            }
+
+            video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+            video.load();
+        }
+    </script>
+
+    <style>
+        * {
+            background: black;
+            color: white;
+            text-shadow: 0 0 20px black;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            font-family: Courrier;
+        }
+
+        body,
+        #preload,
+        #loading,
+        #start,
+        #data {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preload,
+        #video {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #preload,
+        #loading,
+        #start,
+        #data {
+            flex-direction: column;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        #preload {
+            gap: 8px;
+            z-index: 2;
+        }
+
+        #data {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #data,
+        #data span {
+            z-index: 1;
+            background: transparent !important;
+        }
+
+        /* panasonic blue-ray 99 dollars */
+        /* h h h h h, hhgreg */
+
+        .subtitle {
+            font-size: 16px;
+        }
+
+        @media only screen and (min-aspect-ratio: 1/1) {
+            #video {
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+
+
+
+   
+ </head> 
+ <body>
+    <div id="preload">
+        <div id="loading">
+            <span>Loading...</span>
+            <span class="subtitle"><span id="loading-progress">0</span>%</span>
+        </div>
+        <div id="start" style="display: none">
+            <span>Execuse me English or Spanish?</span>
+        </div>
+        
+        
+    </div>
+    <div id="data"></div>
+    <video id="video" playsinline style="pointer-events: none" />
+</body>
+
+
+
+  
+</html>
